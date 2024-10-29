@@ -1,0 +1,45 @@
+local M = {}
+
+function M.get()
+	return {
+		Normal = { fg = C.fg },
+		NormalFloat = { fg = C.fg },
+		Comment = { fg = C.gray, italic = true },
+		Constant = { fg = C.orange },
+		String = { fg = C.green },
+		Character = { fg = C.green },
+		Number = { fg = C.orange },
+		Boolean = { fg = C.orange },
+		Float = { fg = C.orange },
+		Identifier = { fg = C.red },
+		Function = { fg = C.blue },
+		Statement = { fg = C.magenta },
+		Conditional = { fg = C.magenta },
+		Repeat = { fg = C.magenta },
+		Label = { fg = C.magenta },
+		Operator = { fg = C.cyan },
+		Keyword = { fg = C.magenta },
+		Exception = { fg = C.magenta },
+		PreProc = { fg = C.yellow },
+		Include = { fg = C.blue },
+		Define = { fg = C.magenta },
+		Macro = { fg = C.magenta },
+		PreCondit = { fg = C.yellow },
+		Type = { fg = C.yellow },
+		StorageClass = { fg = C.yellow },
+		Structure = { fg = C.yellow },
+		Typedef = { fg = C.yellow },
+		Special = { fg = C.blue },
+		SpecialChar = { fg = C.orange },
+		Tag = { fg = C.red },
+		Delimiter = { fg = C.fg },
+		SpecialComment = { fg = C.gray },
+		Debug = { fg = C.red },
+		Underlined = { underline = true },
+		Ignore = { fg = C.gray },
+		Error = { fg = C.white, bg = C.red },
+		Todo = { fg = C.yellow, bold = true },
+	}
+end
+
+return M
