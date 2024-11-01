@@ -37,8 +37,8 @@ function M.setup(opts)
 	local editor = require("smooth.editor").get()
 
 	-- Load all custom integrations
-	local render_markdown = require("smooth.integrations.render_markdown").get()
-	local neotree = require("smooth.integrations.neotree").get()
+	local render_markdown = require("smooth.integrations.render-markdown").get()
+	local neotree = require("smooth.integrations.neo-tree").get()
 
 	-- Set all highlight groups
 	local highlights = vim.tbl_extend("force", syntax, treesitter, lsp, editor, render_markdown, neotree)
