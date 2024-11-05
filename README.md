@@ -2,6 +2,8 @@
 
 Personal smooth theme implementation for Neovim.
 
+![screenshot](./theme.png)
+
 ## Installation
 
 ### Lazy
