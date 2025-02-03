@@ -66,9 +66,10 @@ function M.setup(opts)
 	-- Load all custom integrations
 	local render_markdown = require("smooth.integrations.render-markdown").get()
 	local neotree = require("smooth.integrations.neo-tree").get()
+	local snacks = require("smooth.integrations.snacks").get()
 
 	-- Set all highlight groups
-	local highlights = vim.tbl_extend("force", syntax, treesitter, lsp, editor, render_markdown, neotree)
+	local highlights = vim.tbl_extend("force", syntax, treesitter, lsp, editor, render_markdown, neotree, snacks)
 	for group, styles in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, styles)
 	end
