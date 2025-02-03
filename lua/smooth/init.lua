@@ -58,10 +58,7 @@ function M.setup(opts)
 	C.current = M.get_colors()
 
 	-- Load all custom integrations
-	local integrations = require("smooth.integrations").get()
-
-	-- Set all highlight groups
-	local highlights = vim.tbl_extend("force", integrations)
+	local highlights = require("smooth.highlights").get()
 	for group, styles in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, styles)
 	end
