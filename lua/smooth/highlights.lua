@@ -230,8 +230,15 @@ function M.get()
 		NeoTreeStatusLineNC = { fg = C.current.bg, bg = C.current.bg },
 
 		-- folke/snacks.nvim
+		Added = { fg = C.current.green },
+		Removed = { fg = C.current.red },
+		SnacksPickerDir = { fg = C.current.gray },
 		SnacksPickerPathIgnored = { fg = C.current.gray },
 		SnacksPickerPathHidden = { fg = C.current.gray },
+		SnacksPickerGitStatusIgnored = { fg = C.current.gray },
+		SnacksPickerGitStatusUntracked = { fg = C.current.yellow },
+		SnacksPickerGitStatusAdded = { fg = C.current.green },
+		SnacksPickerGitStatusDeleted = { fg = C.current.red },
 	}
 end
 
