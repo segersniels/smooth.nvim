@@ -25,6 +25,7 @@ local M = {
 ---@field orange string
 ---@field gray string
 ---@field darkgray string
+---@field cursorline string
 
 ---@class C
 ---@field dark ColorScheme
@@ -44,6 +45,7 @@ local C = {
 		orange = "#d7827e",
 		gray = "#7f848e",
 		darkgray = "#484848",
+		cursorline = "#404040",
 	},
 	light = {
 		fg = "#575279",
@@ -59,6 +61,7 @@ local C = {
 		orange = "#d7827e",
 		gray = "#626773",
 		darkgray = "#a8a8a8",
+		cursorline = "#f5f0e8",
 	},
 }
 
@@ -113,7 +116,7 @@ function M.get_highlights(style)
 		WarningMsg = { fg = colors.yellow },
 		WildMenu = { fg = colors.magenta, bg = nil, bold = true },
 		CursorColumn = { fg = nil, bg = colors.darkgray },
-		CursorLine = { fg = nil, bg = colors.darkgray },
+		CursorLine = { fg = nil, bg = colors.cursorline },
 		ToolbarLine = { fg = colors.fg, bg = colors.darkgray },
 		ToolbarButton = { fg = colors.fg, bg = nil, bold = true },
 		NormalMode = { fg = colors.fg, bg = nil, reverse = true },
