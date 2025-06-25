@@ -111,8 +111,8 @@ function M.get_highlights(style)
 		TablineSel = { fg = colors.darkgray, bg = colors.cyan },
 		Tabline = { fg = colors.fg, bg = colors.darkgray },
 		Title = { fg = colors.green, bg = nil, bold = true },
-		Visual = { fg = nil, bg = colors.darkgray },
-		VisualNOS = { fg = nil, bg = colors.darkgray },
+		Visual = { fg = nil, bg = colors.cursorline },
+		VisualNOS = { fg = nil, bg = colors.cursorline },
 		WarningMsg = { fg = colors.yellow },
 		WildMenu = { fg = colors.magenta, bg = nil, bold = true },
 		CursorColumn = { fg = nil, bg = colors.darkgray },
@@ -245,9 +245,9 @@ function M.get_highlights(style)
 		DiagnosticUnderlineWarn = { undercurl = true, sp = colors.yellow },
 		DiagnosticUnderlineInfo = { undercurl = true, sp = colors.blue },
 		DiagnosticUnderlineHint = { undercurl = true, sp = colors.cyan },
-		LspReferenceText = { bg = colors.darkgray },
-		LspReferenceRead = { bg = colors.darkgray },
-		LspReferenceWrite = { bg = colors.darkgray },
+		LspReferenceText = { bg = colors.cursorline },
+		LspReferenceRead = { bg = colors.cursorline },
+		LspReferenceWrite = { bg = colors.cursorline },
 		LspSignatureActiveParameter = { fg = colors.yellow, bold = true },
 
 		-- MeanderingProgrammer/render-markdown.nvim
