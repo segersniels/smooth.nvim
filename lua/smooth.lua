@@ -26,6 +26,7 @@ local M = {
 ---@field gray string
 ---@field darkgray string
 ---@field cursorline string
+---@field visual string
 
 ---@class C
 ---@field dark ColorScheme
@@ -46,6 +47,7 @@ local C = {
 		gray = "#7f848e",
 		darkgray = "#484848",
 		cursorline = "#404040",
+		visual = "#4a4a4a",
 	},
 	light = {
 		fg = "#575279",
@@ -62,6 +64,7 @@ local C = {
 		gray = "#626773",
 		darkgray = "#a8a8a8",
 		cursorline = "#f5f0e8",
+		visual = "#ebe5d8",
 	},
 }
 
@@ -111,8 +114,8 @@ function M.get_highlights(style)
 		TablineSel = { fg = colors.darkgray, bg = colors.cyan },
 		Tabline = { fg = colors.fg, bg = colors.darkgray },
 		Title = { fg = colors.green, bg = nil, bold = true },
-		Visual = { fg = nil, bg = colors.cursorline },
-		VisualNOS = { fg = nil, bg = colors.cursorline },
+		Visual = { fg = nil, bg = colors.visual },
+		VisualNOS = { fg = nil, bg = colors.visual },
 		WarningMsg = { fg = colors.yellow },
 		WildMenu = { fg = colors.magenta, bg = nil, bold = true },
 		CursorColumn = { fg = nil, bg = colors.darkgray },
