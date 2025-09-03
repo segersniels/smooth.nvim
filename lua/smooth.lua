@@ -302,6 +302,7 @@ function M.get_highlights(style)
 
 		-- folke/snacks.nvim
 		Added = { fg = colors.green },
+		Changed = { fg = colors.yellow },
 		Removed = { fg = colors.red },
 		SnacksPickerDir = { fg = colors.gray },
 		SnacksPickerPathIgnored = { fg = colors.gray },
