@@ -103,6 +103,8 @@ function M.get_highlights(style)
 		BlinkCmpMenuSelection = { fg = colors.fg, bg = colors.blue },
 		BlinkCmpScrollBarThumb = { bg = colors.fg },
 		BlinkCmpScrollBarGutter = { bg = colors.visual },
+		BlinkCmpDoc = { fg = colors.fg, bg = colors.bg },
+		BlinkCmpSignatureHelp = { fg = colors.fg, bg = colors.bg },
 
 		Question = { fg = colors.green },
 		QuickFixLine = { fg = colors.fg, bg = nil, reverse = true },
