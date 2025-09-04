@@ -97,6 +97,39 @@ function M.get_highlights(style)
 		PmenuSbar = { fg = colors.fg, bg = colors.gray },
 		PmenuThumb = { fg = colors.fg, bg = colors.fg },
 
+		-- hrsh7th/nvim-cmp
+		CmpItemAbbr = { fg = colors.fg },
+		CmpItemAbbrDeprecated = { fg = colors.gray, strikethrough = true },
+		CmpItemAbbrMatch = { fg = colors.yellow, bold = true },
+		CmpItemAbbrMatchFuzzy = { fg = colors.yellow, bold = true },
+		CmpItemKind = { fg = colors.blue },
+		CmpItemKindText = { fg = colors.fg },
+		CmpItemKindMethod = { fg = colors.blue },
+		CmpItemKindFunction = { fg = colors.blue },
+		CmpItemKindConstructor = { fg = colors.yellow },
+		CmpItemKindField = { fg = colors.red },
+		CmpItemKindVariable = { fg = colors.red },
+		CmpItemKindClass = { fg = colors.yellow },
+		CmpItemKindInterface = { fg = colors.yellow },
+		CmpItemKindModule = { fg = colors.yellow },
+		CmpItemKindProperty = { fg = colors.red },
+		CmpItemKindUnit = { fg = colors.orange },
+		CmpItemKindValue = { fg = colors.orange },
+		CmpItemKindEnum = { fg = colors.yellow },
+		CmpItemKindKeyword = { fg = colors.magenta },
+		CmpItemKindSnippet = { fg = colors.green },
+		CmpItemKindColor = { fg = colors.cyan },
+		CmpItemKindFile = { fg = colors.blue },
+		CmpItemKindReference = { fg = colors.blue },
+		CmpItemKindFolder = { fg = colors.blue },
+		CmpItemKindEnumMember = { fg = colors.orange },
+		CmpItemKindConstant = { fg = colors.orange },
+		CmpItemKindStruct = { fg = colors.yellow },
+		CmpItemKindEvent = { fg = colors.yellow },
+		CmpItemKindOperator = { fg = colors.cyan },
+		CmpItemKindTypeParameter = { fg = colors.yellow },
+		CmpItemMenu = { fg = colors.gray, italic = true },
+
 		-- saghen/blink.cmp
 		BlinkCmpMenu = { fg = colors.fg, bg = colors.gray },
 		BlinkCmpMenuBorder = { fg = colors.gray, bg = colors.gray },
@@ -344,22 +377,6 @@ function M.setup(opts)
 		vim.api.nvim_set_hl(0, group, styles)
 	end
 
-	-- Force blink.cmp highlights after plugin loads
-	vim.defer_fn(function()
-		local blink_highlights = {
-			BlinkCmpMenu = highlights.BlinkCmpMenu,
-			BlinkCmpMenuBorder = highlights.BlinkCmpMenuBorder,
-			BlinkCmpMenuSelection = highlights.BlinkCmpMenuSelection,
-			BlinkCmpScrollBarThumb = highlights.BlinkCmpScrollBarThumb,
-			BlinkCmpScrollBarGutter = highlights.BlinkCmpScrollBarGutter,
-			BlinkCmpLabel = highlights.BlinkCmpLabel,
-			BlinkCmpLabelMatch = highlights.BlinkCmpLabelMatch,
-			BlinkCmpKind = highlights.BlinkCmpKind,
-		}
-		for group, styles in pairs(blink_highlights) do
-			vim.api.nvim_set_hl(0, group, styles)
-		end
-	end, 100)
 end
 
 function M.load()
