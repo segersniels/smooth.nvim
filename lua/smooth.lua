@@ -2,12 +2,14 @@
 
 ---@class SmoothOptions
 ---@field style? Style The color scheme style to use
+---@field auto? boolean Auto-switch based on system appearance (default: true)
 
 ---@class M
 ---@field options SmoothOptions
 local M = {
 	options = {
 		style = "dark",
+		auto = true,
 	},
 }
 
@@ -348,6 +350,28 @@ function M.get_highlights(style)
 	}
 end
 
+---Detect system appearance on macOS
+---@return Style|nil
+local function detect_system_appearance()
+	if vim.fn.has("mac") == 0 then
+		return nil
+	end
+
+	local handle = io.popen("defaults read -g AppleInterfaceStyle 2>/dev/null")
+	if not handle then
+		return nil
+	end
+
+	local result = handle:read("*a")
+	handle:close()
+
+	if result and result:match("Dark") then
+		return "dark"
+	else
+		return "light"
+	end
+end
+
 local did_setup = false
 
 ---@param opts? SmoothOptions
@@ -357,12 +381,40 @@ function M.setup(opts)
 	-- Parse user options
 	M.options = vim.tbl_deep_extend("force", M.options, opts or {})
 
+	-- Auto-detect system appearance if enabled
+	if M.options.auto then
+		local system_style = detect_system_appearance()
+		if system_style then
+			M.options.style = system_style
+		end
+	end
+
 	-- Load all custom integrations
 	local highlights = M.get_highlights(M.options.style)
 	for group, styles in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, styles)
 	end
 
+	-- Set up auto-switching if enabled
+	if M.options.auto and vim.fn.has("mac") == 1 then
+		-- Create autocmd group (clear any existing ones)
+		local group = vim.api.nvim_create_augroup("SmoothAutoSwitch", { clear = true })
+
+		-- Monitor system appearance changes via focus events
+		vim.api.nvim_create_autocmd({ "FocusGained", "VimEnter" }, {
+			group = group,
+			callback = function()
+				if M.options.auto then
+					local system_style = detect_system_appearance()
+					if system_style and system_style ~= M.options.style then
+						M.options.style = system_style
+						M.setup(M.options)
+						vim.cmd.colorscheme("smooth")
+					end
+				end
+			end,
+		})
+	end
 end
 
 function M.load()
@@ -374,6 +426,9 @@ function M.load()
 end
 
 vim.api.nvim_create_user_command("SmoothStyle", function()
+	-- Disable auto-switching when manually toggling
+	M.options.auto = false
+
 	if M.options.style == "dark" then
 		M.options.style = "light"
 	else
@@ -381,8 +436,22 @@ vim.api.nvim_create_user_command("SmoothStyle", function()
 	end
 
 	M.setup(M.options)
-	vim.notify("Smooth: Toggled style!", vim.log.levels.INFO)
+	vim.notify("Smooth: Toggled style! (Auto-switching disabled)", vim.log.levels.INFO)
 	vim.cmd.colorscheme("smooth")
+end, {})
+
+vim.api.nvim_create_user_command("SmoothAuto", function()
+	M.options.auto = not M.options.auto
+
+	if M.options.auto then
+		M.setup(M.options)
+		vim.notify("Smooth: Auto-switching enabled!", vim.log.levels.INFO)
+		vim.cmd.colorscheme("smooth")
+	else
+		-- Clear autocmds when disabling
+		vim.api.nvim_clear_autocmds({ group = "SmoothAutoSwitch" })
+		vim.notify("Smooth: Auto-switching disabled!", vim.log.levels.INFO)
+	end
 end, {})
 
 return M
