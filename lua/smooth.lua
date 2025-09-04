@@ -92,9 +92,9 @@ function M.get_highlights(style)
 		ModeMsg = { fg = colors.fg },
 		MoreMsg = { fg = colors.fg },
 		NonText = { fg = colors.darkgray },
-		Pmenu = { fg = colors.fg, bg = colors.gray },
+		Pmenu = { fg = colors.fg, bg = colors.bg },
 		PmenuSel = { fg = colors.fg, bg = colors.blue },
-		PmenuSbar = { fg = colors.fg, bg = colors.gray },
+		PmenuSbar = { fg = colors.fg, bg = colors.visual },
 		PmenuThumb = { fg = colors.fg, bg = colors.fg },
 
 		-- hrsh7th/nvim-cmp
