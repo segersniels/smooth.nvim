@@ -98,13 +98,18 @@ function M.get_highlights(style)
 		PmenuThumb = { fg = colors.fg, bg = colors.fg },
 
 		-- saghen/blink.cmp
-		BlinkCmpMenu = { fg = colors.fg, bg = colors.bg },
-		BlinkCmpMenuBorder = { fg = colors.gray, bg = colors.visual },
+		BlinkCmpMenu = { fg = colors.fg, bg = colors.gray },
+		BlinkCmpMenuBorder = { fg = colors.gray, bg = colors.gray },
 		BlinkCmpMenuSelection = { fg = colors.fg, bg = colors.blue },
 		BlinkCmpScrollBarThumb = { bg = colors.fg },
-		BlinkCmpScrollBarGutter = { bg = colors.visual },
+		BlinkCmpScrollBarGutter = { bg = colors.gray },
 		BlinkCmpDoc = { fg = colors.fg, bg = colors.bg },
+		BlinkCmpDocBorder = { fg = colors.gray, bg = colors.bg },
 		BlinkCmpSignatureHelp = { fg = colors.fg, bg = colors.bg },
+		BlinkCmpSignatureHelpBorder = { fg = colors.gray, bg = colors.bg },
+		BlinkCmpLabel = { fg = colors.fg },
+		BlinkCmpLabelMatch = { fg = colors.yellow, bold = true },
+		BlinkCmpKind = { fg = colors.blue },
 
 		Question = { fg = colors.green },
 		QuickFixLine = { fg = colors.fg, bg = nil, reverse = true },
