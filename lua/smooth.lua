@@ -343,6 +343,23 @@ function M.setup(opts)
 	for group, styles in pairs(highlights) do
 		vim.api.nvim_set_hl(0, group, styles)
 	end
+
+	-- Force blink.cmp highlights after plugin loads
+	vim.defer_fn(function()
+		local blink_highlights = {
+			BlinkCmpMenu = highlights.BlinkCmpMenu,
+			BlinkCmpMenuBorder = highlights.BlinkCmpMenuBorder,
+			BlinkCmpMenuSelection = highlights.BlinkCmpMenuSelection,
+			BlinkCmpScrollBarThumb = highlights.BlinkCmpScrollBarThumb,
+			BlinkCmpScrollBarGutter = highlights.BlinkCmpScrollBarGutter,
+			BlinkCmpLabel = highlights.BlinkCmpLabel,
+			BlinkCmpLabelMatch = highlights.BlinkCmpLabelMatch,
+			BlinkCmpKind = highlights.BlinkCmpKind,
+		}
+		for group, styles in pairs(blink_highlights) do
+			vim.api.nvim_set_hl(0, group, styles)
+		end
+	end, 100)
 end
 
 function M.load()
