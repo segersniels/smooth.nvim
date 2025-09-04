@@ -157,7 +157,7 @@ function M.get_highlights(style)
 		SpecialChar = { fg = colors.orange },
 		Tag = { fg = colors.red },
 		Delimiter = { fg = colors.fg },
-		SpecialComment = { fg = colors.darkgray },
+		SpecialComment = { fg = colors.yellow },
 		Debug = { fg = colors.red },
 		Underlined = { underline = true },
 		Ignore = { fg = colors.gray },
