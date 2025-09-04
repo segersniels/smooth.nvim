@@ -96,6 +96,14 @@ function M.get_highlights(style)
 		PmenuSel = { fg = colors.fg, bg = colors.blue },
 		PmenuSbar = { fg = colors.fg, bg = colors.gray },
 		PmenuThumb = { fg = colors.fg, bg = colors.fg },
+
+		-- saghen/blink.cmp
+		BlinkCmpMenu = { fg = colors.fg, bg = colors.gray },
+		BlinkCmpMenuBorder = { fg = colors.gray, bg = colors.gray },
+		BlinkCmpMenuSelection = { fg = colors.fg, bg = colors.blue },
+		BlinkCmpScrollBarThumb = { bg = colors.fg },
+		BlinkCmpScrollBarGutter = { bg = colors.gray },
+
 		Question = { fg = colors.green },
 		QuickFixLine = { fg = colors.fg, bg = nil, reverse = true },
 		qfLineNr = { fg = colors.fg, bg = nil, reverse = true },
