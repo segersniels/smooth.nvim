@@ -350,6 +350,33 @@ function M.get_highlights(style)
 		},
 		NeoTreeStatusLineNC = { fg = colors.bg, bg = colors.bg },
 
+		-- nvim-lualine/lualine.nvim
+		lualine_a_normal = { fg = colors.bg, bg = colors.blue, bold = true },
+		lualine_a_insert = { fg = colors.bg, bg = colors.green, bold = true },
+		lualine_a_visual = { fg = colors.bg, bg = colors.magenta, bold = true },
+		lualine_a_replace = { fg = colors.bg, bg = colors.red, bold = true },
+		lualine_a_command = { fg = colors.bg, bg = colors.yellow, bold = true },
+		lualine_a_inactive = { fg = colors.gray, bg = colors.darkgray },
+		
+		lualine_b_normal = { fg = colors.fg, bg = colors.cursorline },
+		lualine_b_insert = { fg = colors.fg, bg = colors.cursorline },
+		lualine_b_visual = { fg = colors.fg, bg = colors.cursorline },
+		lualine_b_replace = { fg = colors.fg, bg = colors.cursorline },
+		lualine_b_command = { fg = colors.fg, bg = colors.cursorline },
+		lualine_b_inactive = { fg = colors.gray, bg = colors.bg },
+		
+		lualine_c_normal = { fg = colors.fg, bg = colors.bg },
+		lualine_c_insert = { fg = colors.fg, bg = colors.bg },
+		lualine_c_visual = { fg = colors.fg, bg = colors.bg },
+		lualine_c_replace = { fg = colors.fg, bg = colors.bg },
+		lualine_c_command = { fg = colors.fg, bg = colors.bg },
+		lualine_c_inactive = { fg = colors.gray, bg = colors.bg },
+		
+		-- Git diff colors for lualine
+		LualineDiffAdd = { fg = colors.green },
+		LualineDiffChange = { fg = colors.yellow },
+		LualineDiffDelete = { fg = colors.red },
+
 		-- folke/snacks.nvim
 		Added = { fg = colors.green },
 		Changed = { fg = colors.yellow },
