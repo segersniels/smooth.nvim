@@ -50,6 +50,10 @@ local C = {
 		darkgray = "#7f848e",
 		cursorline = "#404040",
 		visual = "#4a4a4a",
+		light_green = "#2a4d3b",
+		light_red = "#4d2a2a",
+		light_yellow = "#4d4434",
+		light_blue = "#344d4d",
 	},
 	light = {
 		fg = "#575279",
@@ -67,6 +71,10 @@ local C = {
 		darkgray = "#626773",
 		cursorline = "#f5f0e8",
 		visual = "#ebe5d8",
+		light_green = "#d4ede4",
+		light_red = "#f9d4d4",
+		light_yellow = "#f9ecd4",
+		light_blue = "#d4e4ed",
 	},
 }
 
@@ -199,6 +207,12 @@ function M.get_highlights(style)
 		Ignore = { fg = colors.gray },
 		Error = { fg = colors.white, bg = colors.red },
 		Todo = { fg = colors.yellow, bold = true },
+
+		-- Git diff/merge conflict highlighting
+		DiffAdd = { bg = colors.light_blue },
+		DiffDelete = { bg = colors.light_red },
+		DiffChange = { bg = colors.light_yellow },
+		DiffText = { bg = colors.light_green },
 
 		-- nvim-treesitter/nvim-treesitter
 		["@comment"] = { link = "Comment" },
