@@ -114,7 +114,7 @@ function M.get_highlights(style)
 		CmpItemKind = { fg = colors.blue },
 		CmpItemKindFunction = { fg = colors.blue },
 		CmpItemKindMethod = { fg = colors.blue },
-		CmpItemKindVariable = { fg = colors.red },
+		CmpItemKindVariable = { fg = colors.yellow },
 		CmpItemKindField = { fg = colors.red },
 		CmpItemKindProperty = { fg = colors.red },
 		CmpItemKindClass = { fg = colors.yellow },
@@ -259,7 +259,7 @@ function M.get_highlights(style)
 		["@attribute"] = { fg = colors.yellow },
 		["@field"] = { fg = colors.red },
 		["@property"] = { fg = colors.red },
-		["@variable"] = { fg = colors.red },
+		["@variable"] = { fg = colors.yellow },
 		["@variable.builtin"] = { fg = colors.orange },
 		["@constant"] = { link = "Constant" },
 		["@constant.builtin"] = { fg = colors.orange },
@@ -357,21 +357,21 @@ function M.get_highlights(style)
 		lualine_a_replace = { fg = colors.bg, bg = colors.red, bold = true },
 		lualine_a_command = { fg = colors.bg, bg = colors.yellow, bold = true },
 		lualine_a_inactive = { fg = colors.gray, bg = colors.darkgray },
-		
+
 		lualine_b_normal = { fg = colors.fg, bg = colors.cursorline },
 		lualine_b_insert = { fg = colors.fg, bg = colors.cursorline },
 		lualine_b_visual = { fg = colors.fg, bg = colors.cursorline },
 		lualine_b_replace = { fg = colors.fg, bg = colors.cursorline },
 		lualine_b_command = { fg = colors.fg, bg = colors.cursorline },
 		lualine_b_inactive = { fg = colors.gray, bg = colors.bg },
-		
+
 		lualine_c_normal = { fg = colors.fg, bg = colors.bg },
 		lualine_c_insert = { fg = colors.fg, bg = colors.bg },
 		lualine_c_visual = { fg = colors.fg, bg = colors.bg },
 		lualine_c_replace = { fg = colors.fg, bg = colors.bg },
 		lualine_c_command = { fg = colors.fg, bg = colors.bg },
 		lualine_c_inactive = { fg = colors.gray, bg = colors.bg },
-		
+
 		-- Git diff colors for lualine
 		LualineDiffAdd = { fg = colors.green },
 		LualineDiffChange = { fg = colors.yellow },
